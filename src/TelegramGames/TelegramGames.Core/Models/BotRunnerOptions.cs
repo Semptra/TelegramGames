@@ -1,4 +1,6 @@
-﻿namespace TelegramGames.Core.Models
+﻿using System.Collections.Generic;
+
+namespace TelegramGames.Core.Models
 {
     public class BotRunnerOptions : IBotRunnerOptions
     {
@@ -6,10 +8,13 @@
         {
             Token = token;
             BotName = botName;
+            Options = new Dictionary<string, string>();
         }
 
         public string Token { get; }
 
         public string BotName { get; }
+
+        public IDictionary<string, string> Options { get; }
     }
 }
