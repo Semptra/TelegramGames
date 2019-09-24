@@ -30,6 +30,7 @@
             }
 
             var userPosition = context.Users.OrderByDescending(x => x.Icq)
+                                            .ToList()
                                             .Select((user, index) => new { user, index })
                                             .Where(pair => pair.user.Id == currentUser.Id)
                                             .Select(pair => pair.index + 1)
