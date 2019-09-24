@@ -8,6 +8,7 @@
     using Telegram.Bot.Args;
     using Telegram.Bot.Types.Enums;
     using TelegramGames.Core.Comparers;
+    using TelegramGames.Core.Extensions;
     using TelegramGames.Core.Models;
 
     public class BotRunner : IBotRunner
@@ -45,7 +46,7 @@
         {
             var message = args.Message;
 
-            Log.Information("Recieved message of type {0} from user {1} ({2})", message.Type, message.From.Username, string.Join(" ", message.From.FirstName, message.From.LastName).Trim());
+            Log.Information("Recieved message of type {0} from user {1} ({2})", message.Type, message.From.Username, message.From.GetFullName());
 
             var command = Commands.FirstOrDefault(x => message.Type == MessageType.Text && IsMessageContainsBotName(message.Text, x));
             if (command != null)

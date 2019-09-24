@@ -8,22 +8,22 @@
     using TelegramGames.Icq.Core.Database;
     using TelegramGames.Icq.Core.Extensions;
 
-    public class Top10Command : ICommand
+    public class TopCommand : ICommand
     {
         private readonly IcqBotContext context;
 
-        public Top10Command(IcqBotContext context)
+        public TopCommand(IcqBotContext context)
         {
             this.context = context;
         }
 
-        public string Name => "top10";
+        public string Name => "top";
 
         public void Execute(Message message, ITelegramBotClient telegramBotClient)
         {
-            var messageBuilder = new StringBuilder("Рейтинг ICQ (топ 10):\n\n");
+            var messageBuilder = new StringBuilder("Рейтинг ICQ:\n\n");
 
-            var users = context.Users.OrderByDescending(x => x.Icq).Take(10).ToList();
+            var users = context.Users.OrderByDescending(x => x.Icq).ToList();
             for(int i = 0; i < users.Count; i++)
             {
                 messageBuilder.Append($"{i + 1}. {users[i].Name} c ICQ {users[i].Icq}.\n");

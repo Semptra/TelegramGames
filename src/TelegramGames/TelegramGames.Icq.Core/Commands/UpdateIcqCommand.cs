@@ -5,6 +5,7 @@
     using Serilog;
     using Telegram.Bot;
     using Telegram.Bot.Types;
+    using TelegramGames.Core.Extensions;
     using TelegramGames.Core.Models;
     using TelegramGames.Icq.Core.Database;
     using TelegramGames.Icq.Core.Extensions;
@@ -56,11 +57,15 @@
 
         private void AddNewUser(Message message, ITelegramBotClient telegramBotClient)
         {
+            var icq = random.Next(1, 10);
             var newUser = new Database.Models.User
             {
                 Id = message.From.Id,
-                Name = message.GetFullName(),
-                Icq = random.Next(1, 10),
+                Name = message.From.GetFullName(),
+                Icq = icq,
+                LastIcqDelta = icq,
+                TotalPlayed = 1,
+                TotalFailed = 0,
                 LastTimePlayed = DateTime.Now.ToUniversalTime()
             };
 
@@ -77,12 +82,12 @@
 
             if (IsPositive())
             {
-                icqDelta = random.Next(1, 10);
+                icqDelta = random.Next(1, 12);
                 changeText = "увеличился";
             }
             else
             {
-                icqDelta = random.Next(-10, -1);
+                icqDelta = random.Next(-9, -1);
                 changeText = "уменьшился";
             }
 
@@ -93,7 +98,9 @@
             }
 
             user.Icq = newIcq;
-            user.Name = message.GetFullName();
+            user.Name = message.From.GetFullName();
+            user.LastIcqDelta = icqDelta;
+            user.TotalPlayed += 1;
             user.LastTimePlayed = DateTime.Now.ToUniversalTime();
 
             telegramBotClient.SendTextMessage(message.Chat.Id, $"{user.Name}, Ваш ICQ {changeText} на {Math.Abs(icqDelta)} и теперь равен {user.Icq}, поздравляем!");
@@ -103,7 +110,7 @@
 
         private void PunishUser(Database.Models.User user, Message message, ITelegramBotClient telegramBotClient)
         {
-            var icqDelta = random.Next(-8, -2);
+            var icqDelta = random.Next(-6, -2);
             var newIcq = user.Icq + icqDelta;
             if (newIcq <= 0)
             {
@@ -111,9 +118,12 @@
             }
 
             user.Icq = newIcq;
-            user.Name = message.GetFullName();
+            user.Name = message.From.GetFullName();
+            user.LastIcqDelta = icqDelta;
+            user.TotalPlayed += 1;
+            user.TotalFailed += 1;
 
-            telegramBotClient.SendTextMessage(message.Chat.Id, $"{user.Name}, вы уже играли сегодня, поэтому Ваш ICQ уменьшился на {Math.Abs(icqDelta)} и теперь равен {user.Icq}, будьте внимательны!");
+            telegramBotClient.SendTextMessage(message.Chat.Id, $"{user.Name}, Вы уже играли сегодня, поэтому Ваш ICQ уменьшился на {Math.Abs(icqDelta)} и теперь равен {user.Icq}, будьте внимательны!");
 
             context.Users.Update(user);
         }

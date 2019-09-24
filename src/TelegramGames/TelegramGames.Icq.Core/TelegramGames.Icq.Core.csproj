@@ -23,4 +23,7 @@
     <Folder Include="Commands\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Commands\StatsCommand.css" />
+  </ItemGroup>
 </Project>

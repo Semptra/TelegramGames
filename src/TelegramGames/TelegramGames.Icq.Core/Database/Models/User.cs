@@ -12,6 +12,12 @@
 
         public int Icq { get; set; }
 
+        public int LastIcqDelta { get; set; }
+
+        public int TotalPlayed { get; set; }
+
+        public int TotalFailed { get; set; }
+
         public DateTime LastTimePlayed { get; set; }
     }
 }
