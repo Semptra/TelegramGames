@@ -49,6 +49,7 @@
             serviceCollection.AddSingleton<ICommand, StatsCommand>();
             serviceCollection.AddSingleton<ICommand, TopCommand>();
             serviceCollection.AddSingleton<ICommand, Top10Command>();
+            serviceCollection.AddSingleton<ICommand, RollDiceCommand>();
 
             serviceCollection.AddSingleton<ILogger>(_ => log);
             serviceCollection.AddDbContext<IcqBotContext>(options => options.UseSqlite(appsettings.ConnectionString));

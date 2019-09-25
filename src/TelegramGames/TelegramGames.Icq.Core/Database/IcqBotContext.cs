@@ -9,6 +9,8 @@
 
         public DbSet<LaunchTime> LaunchTimes { get; set; }
 
+        public DbSet<DiceResult> DiceResults { get; set; }
+
         public IcqBotContext(DbContextOptions options) : base(options)
         {
         }
