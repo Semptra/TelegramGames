@@ -7,7 +7,7 @@
         public override string Url => Constants.BashUrl;
 
         // Look at https://www.w3schools.com/xml/xpath_syntax.asp for XPath tutorial
-        public Quote GetRandomQuote()
+        public BashQuote GetRandomQuote()
         {
             var article = Document.DocumentNode.SelectSingleNode("(//section[@class='quotes']/article[@class='quote'])[1]");
 
@@ -27,7 +27,7 @@
             // Something like: 3109
             var rating = article.SelectSingleNode("//div/footer/div[@class='quote__total']").InnerText;
 
-            return new Quote(number, date, text, rating);
+            return new BashQuote(number, date, text, rating);
         }
     }
 }

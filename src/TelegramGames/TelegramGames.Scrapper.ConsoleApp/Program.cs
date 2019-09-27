@@ -56,7 +56,7 @@
             var appsettings = JsonSerializer.Deserialize<ScrapperBotConfiguration>(File.ReadAllText(appsettingsPath));
 
             // TODO: Add commands
-            serviceCollection.AddSingleton<ICommand, QuoteCommand>();
+            serviceCollection.AddSingleton<ICommand, BashQuoteCommand>();
 
             serviceCollection.AddSingleton<ILogger>(_ => log);
             serviceCollection.AddSingleton<IWebParser, BashParser>();
