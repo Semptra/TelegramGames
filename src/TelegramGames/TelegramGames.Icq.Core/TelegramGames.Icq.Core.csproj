@@ -21,7 +21,6 @@
     <Folder Include="Database\" />
     <Folder Include="Database\Models\" />
     <Folder Include="Commands\" />
-    <Folder Include="Extensions\" />
   </ItemGroup>
     
 </Project>

@@ -7,7 +7,6 @@
     using TelegramGames.Core.Extensions;
     using TelegramGames.Core.Models;
     using TelegramGames.Icq.Core.Database;
-    using TelegramGames.Icq.Core.Extensions;
 
     public class StatsCommand : ICommand
     {

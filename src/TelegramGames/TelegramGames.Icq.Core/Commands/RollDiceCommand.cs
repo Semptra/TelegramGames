@@ -8,7 +8,6 @@
     using TelegramGames.Core.Models;
     using TelegramGames.Icq.Core.Database;
     using TelegramGames.Icq.Core.Database.Models;
-    using TelegramGames.Icq.Core.Extensions;
 
     public class RollDiceCommand : ICommand
     {

@@ -1,11 +1,16 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramGames.Core", "TelegramGames.Core\TelegramGames.Core.csproj", "{0C4E377A-DFD7-44B3-AC56-A0D355736BF3}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramGames.Core", "TelegramGames.Core\TelegramGames.Core.csproj", "{0C4E377A-DFD7-44B3-AC56-A0D355736BF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramGames.Icq.ConsoleApp", "TelegramGames.Icq.ConsoleApp\TelegramGames.Icq.ConsoleApp.csproj", "{652A0A08-E094-43FC-A484-62C562BC71CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramGames.Icq.ConsoleApp", "TelegramGames.Icq.ConsoleApp\TelegramGames.Icq.ConsoleApp.csproj", "{652A0A08-E094-43FC-A484-62C562BC71CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramGames.Icq.Core", "TelegramGames.Icq.Core\TelegramGames.Icq.Core.csproj", "{9B05548F-97B1-4D59-870F-8B813C7DF4C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramGames.Icq.Core", "TelegramGames.Icq.Core\TelegramGames.Icq.Core.csproj", "{9B05548F-97B1-4D59-870F-8B813C7DF4C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramGames.Scrapper.Core", "TelegramGames.Scrapper.Core\TelegramGames.Scrapper.Core.csproj", "{C1AEB098-F5C6-45FE-B8B5-8832BDED1F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramGames.Scrapper.ConsoleApp", "TelegramGames.Scrapper.ConsoleApp\TelegramGames.Scrapper.ConsoleApp.csproj", "{7F934F90-2352-4699-935D-1D5DADF5C3A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,5 +30,19 @@ Global
 		{9B05548F-97B1-4D59-870F-8B813C7DF4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B05548F-97B1-4D59-870F-8B813C7DF4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B05548F-97B1-4D59-870F-8B813C7DF4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1AEB098-F5C6-45FE-B8B5-8832BDED1F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1AEB098-F5C6-45FE-B8B5-8832BDED1F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1AEB098-F5C6-45FE-B8B5-8832BDED1F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1AEB098-F5C6-45FE-B8B5-8832BDED1F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F934F90-2352-4699-935D-1D5DADF5C3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F934F90-2352-4699-935D-1D5DADF5C3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F934F90-2352-4699-935D-1D5DADF5C3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F934F90-2352-4699-935D-1D5DADF5C3A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F8A5B89-8B5D-4B1F-AB8A-4E45DD875ADF}
 	EndGlobalSection
 EndGlobal

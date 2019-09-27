@@ -4,9 +4,9 @@
     using System.Text;
     using Telegram.Bot;
     using Telegram.Bot.Types;
+    using TelegramGames.Core.Extensions;
     using TelegramGames.Core.Models;
     using TelegramGames.Icq.Core.Database;
-    using TelegramGames.Icq.Core.Extensions;
 
     public class Top10Command : ICommand
     {
