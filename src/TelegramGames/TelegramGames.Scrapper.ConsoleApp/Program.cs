@@ -57,9 +57,12 @@
 
             // TODO: Add commands
             serviceCollection.AddSingleton<ICommand, BashQuoteCommand>();
+            serviceCollection.AddSingleton<ICommand, MemeCommand>();
+
+            serviceCollection.AddSingleton<IWebParser, BashParser>();
+            serviceCollection.AddSingleton<IWebParser, KnowYourMemeParser>();
 
             serviceCollection.AddSingleton<ILogger>(_ => log);
-            serviceCollection.AddSingleton<IWebParser, BashParser>();
             serviceCollection.AddSingleton<IBotRunnerOptions>(_ => new BotRunnerOptions(appsettings.Token, appsettings.BotName));
             serviceCollection.AddSingleton<IBotRunner, BotRunner>();
 
